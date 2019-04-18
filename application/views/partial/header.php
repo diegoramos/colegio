@@ -5,7 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/main.css">
+<<<<<<< HEAD
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/css/ddcustom.css">
+=======
+>>>>>>> 59f7e5c9ff86cae8c95491a575dcf632ab41c7c5
 </head>
 <body>
 	<!-- SideBar -->
