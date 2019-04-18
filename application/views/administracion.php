@@ -100,7 +100,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">70</p>
-					<small><a href="registro_secretaria.html" target="_blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>secretary/registrar_secretaria">Registrar</a></small>
                     <!-- boton -->
                 <style>
 .btn {
