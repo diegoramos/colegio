@@ -10,7 +10,9 @@ class Administration extends Secure_area {
 		$this->load->view('partial/footer');
 	}
 	public function registrar_directores(){
+		$this->load->view('partial/header');
 		$this->load->view('registrar_directores');
+		$this->load->view('partial/footer');
 	}
 	public function listar_directores(){
 		

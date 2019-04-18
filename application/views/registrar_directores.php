@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario Login</title>
- 
-    <!-- CSS de Bootstrap -->
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/fonts/font-awesome.min.css"> <!--Iconos--> 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500" >
-    <link rel="stylesheet" href="<?php echo base_url();?>assets/css/custom.css">
-    
-  </head>
-  <body>  
-     
-    <div class="my-content" >
-        <div class="container" > 
+      <section class="full-box dashboard-contentPage">
             <div class="row">
                 <div class="col-sm-12" >
                   <h1><strong>Formulario de Registro</strong> </h1>
@@ -60,10 +42,4 @@
                     </div>
               </div>
             </div>
-            
-        </div>
-      </div>
-      
-
-  </body>
-</html>
+          </section>
