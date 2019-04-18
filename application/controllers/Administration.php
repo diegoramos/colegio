@@ -13,7 +13,7 @@ class Administration extends Secure_area {
 		$this->load->view('registrar_directores');
 	}
 	public function listar_directores(){
-		
+		$this->load->view('listar_directores');
 	}
 
 }
