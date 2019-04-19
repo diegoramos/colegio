@@ -51,9 +51,13 @@
                         <div class="form-group">
                             <input type="text" REQUIRED name="telefono" placeholder="Celular o teléfono..." class="form-control" id="telefono" value="<?=isset($info->telefono)?$info->telefono:''?>">
                         </div>
-                        <div class="form-group">
-                            <img height="100" width="100" src="<?php echo base_url()."uploads/".$info->filename; ?>" alt="">
-                        </div>
+                        <?php if (isset($info->filename)) {  ?>
+                          <div class="form-group">
+                            <?php if ($info->filename!='') {  ?>
+                              <img height="100" width="100" src="<?php echo base_url()."uploads/".$info->filename; ?>" alt="">
+                            <?php } ?>
+                          </div>
+                        <?php } ?>
                         <div class="form-group">
                             <input type="file" name="archivo" id="archivo">
                         </div>

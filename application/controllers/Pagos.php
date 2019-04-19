@@ -10,14 +10,16 @@ class Pagos extends Secure_area {
 	}
 	public function index()
 	{
-		//$this->load->view('partial/header');
 		$this->load->view('pagos');
-		//$this->load->view('partial/footer');
 	}
 	public function pagar($id)
 	{
 		$data = array();
 		$data['action'] = "add";
+		$data['info'] = $this->Alumnos_model->get_by_id($id);
+		echo "<pre>";
+		print_r ($data['info']);
+		echo "</pre>";exit;
 		$data['pagos'] = new stdClass();
 		$this->load->view('pagos',$data);
 	}
@@ -29,12 +31,6 @@ class Pagos extends Secure_area {
 	}
 	public function listar_pago(){
 		$data = array();
-		/*
-			tipo_ususario
-			1 => admin,
-			2 => director,
-			3 => secretaria,
-			*/
 		$data['pagos'] = '';//$this->Administration_model->get_all_usuarios(2);
 		$this->load->view('listar_directores',$data);
 	}
@@ -49,19 +45,7 @@ class Pagos extends Secure_area {
 			$data_persona = array(
 				'nombres' => $nombre ,
 				'appaterno' => $apellidos);
-			$last_id = $this->Administration_model->save_people($data_persona);
-			/*
-			tipo_ususario
-			1 => admin,
-			2 => director,
-			3 => secretaria,
-			*/
-			$data_usuario = array(
-				'id_persona' => $last_id,
-				'usuario' => $usuario ,
-				'tipo_ususario' => 2,
-				'password' => password_hash($password, PASSWORD_DEFAULT));
-			$this->Administration_model->save_usuario($data_usuario);
+			$this->Administration_model->save_people($data_persona);
 			$data = array();
 			$data['action'] = "add";
 			$data['tipo'] = "Regístrar";
@@ -78,13 +62,7 @@ class Pagos extends Secure_area {
 				'nombres' => $nombre ,
 				'appaterno' => $apellidos);
 			$last_id = $this->Administration_model->update_people($id_persona,$data_persona);
-			$data_usuario = array(
-				'usuario' => $usuario,
-				'tipo_ususario' => 2);
-			if ($password!='') {
-				$data_usuario['password'] = password_hash($password, PASSWORD_DEFAULT);
-			}
-			$this->Administration_model->update_usuario($id_persona,$data_usuario);
+
 			header("Location: ".base_url()."administration/listar_directores"); 
 		}else{
 			$data['status'] = "Opcion incorrecta";

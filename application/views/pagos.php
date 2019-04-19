@@ -39,13 +39,13 @@
 	            <input type="text" REQUIRED name="fecha" placeholder="FECHA..." readonly="" class="form-control" id="fecha" value="<?=isset($info->fecha)?$info->fecha:date('Y-m-d H:i:s')?>">
 	        </div>
 	        <div class="form-group">
-	            <input type="number" max="99999999" REQUIRED name="monto" placeholder="MONTO..." class="form-control" id="monto" value="<?=isset($info->monto)?$info->monto:''?>">
+	            <input type="number" max="99999999" REQUIRED name="monto" placeholder="S/. 00" class="form-control" id="monto" value="<?=isset($info->monto)?$info->monto:''?>">
 	        </div>
 	         <div class="form-group">
-	            <input type="email" REQUIRED name="concepto" placeholder="CONCEPTO..." class="form-control" id="concepto" value="<?=isset($info->concepto)?$info->concepto:''?>">
+	            <textarea REQUIRED name="concepto" placeholder="CONCEPTO..." class="form-control" id="concepto" value="<?=isset($info->concepto)?$info->concepto:''?>"></textarea>
 	        </div>
 	        <button type="button" class="btn btn-primary">Guardar</button>
-	        <input name="action" type="hidden" value="<?php echo isset($_GET['action']) ? $_GET['action']:$action; ?>" /> 
+	        <input name="action" type="hidden" value="" /> 
 	     </form>
 	    </div>
 	</div>
@@ -69,7 +69,7 @@
 			    	<td><?=$val->fecha?></td>
 			    	<td><?=$val->monto?></td>
 			    	<td><?=$val->concepto?></td>
-			    	<td></td><!--<?=$val->password?>-->
+			    	<td></td>
 			    	<td><a class="btn btn-primary" href="<?php echo base_url(); ?>secretary/editar_secretaria/<?=$val->id_persona?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url(); ?>secretary/delete_secretaria/<?=$val->id_persona?>" title="">Delete</a></td>
 			    </tr>
 			<?php } ?>
