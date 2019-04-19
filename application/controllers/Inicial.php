@@ -20,6 +20,7 @@ class Inicial extends Secure_area {
 	
 	public function inicial_estimulacion($value='')
 	{
+		$data = array();
 		$this->load->view('inicial_estimulacion');
 	}
 
