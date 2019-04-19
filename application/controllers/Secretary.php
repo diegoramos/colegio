@@ -24,6 +24,10 @@ class Secretary extends CI_Controller {
 	public function registrar_secretaria(){
 		$this->load->view('registrar_secretaria');
 	}
+
+	public function listar_secretaria(){
+		$this->load->view('listar_secretaria');
+	}
 	
 	// Add a new item
 	public function add()

@@ -36,7 +36,10 @@
                         </div>
                     </div>
                     <div class="myform-bottom">
-                      <form role="form" action="registro_secretaria.php" method="post" class="">
+                      <form role="form" action="registrar_inicial_estimulacion.php" method="post" enctype="multipart/form-data">
+                      <div class="form-group">
+                            <input type="text" REQUIRED name="CODIGO" placeholder="CREAR CODIGO DE ALUMNO..." class="form-control" id="form-CODIGO">
+                        </div>
                         <div class="form-group">
                         
                             <input type="text" REQUIRED name="NOMBRE" placeholder="Nombres..." class="form-control" id="form-firtsname">
@@ -47,21 +50,18 @@
                         
                         <div class="form-group">
                         
-                            <input type="number" max="99999999" REQUIRED name="DNI" placeholder="DNI..." class="form-control" id="form-DNI">
+                            <input type="text" REQUIRED name="NUMERO" placeholder="Celular o teléfono..." class="form-control" id="form-NUMERO">
                         </div>
-                         <div class="form-group col-md-offset-2 col-md-8">
-                        
-                            <input type="text" REQUIRED name="usuario" placeholder="NOMBRE DE SECRETARIA..." class="form-control" id="form-usuario">
+                        <div class="form-group">
+                            <input type="file" name="archivo">
+                            
                         </div>
-                        <div class="form-group col-md-offset-2 col-md-8">
-                            <input type="text" REQUIRED name="contrasena" placeholder="CONTRASEÑA DE SECREATRIA..." class="form-control" id="form-contrasena">
-                        </div>
-                        
-                        
-                        
                         
                         <button type="submit" class="mybtn" href="#">Registrarme</button>
+                        <input name="action" type="hidden" value="upload" /> 
+                        
                      </form>
+
                     </div>
               </div>
             </div>

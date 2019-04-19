@@ -128,7 +128,7 @@
   background: #e7e7e7;
 }
 </style>
-<button class="btn info" > <a href="ver_secretaria.php" target="_blank" >ver</a></button>
+<button class="btn info" > <a href="<?php echo base_url() ?>secretary/listar_secretaria"" target="_blank" >ver</a></button>
 
 <!-- /boton -->
 				</div>
@@ -170,7 +170,7 @@
   background: #e7e7e7;
 }
 </style>
-<button class="btn info" > <a href="inicial.php" target="_blank" >ver</a></button>
+<button class="btn info" > <a href="<?php echo base_url() ?>inicial" target="_blank" >ver</a></button>
 
 <!-- /boton -->
 				</div>
