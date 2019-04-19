@@ -22,42 +22,37 @@ class Secundaria extends Secure_area {
 	public function registrar_secundaria($tipo_alumno='')
 	{
 		$data = array();
-		if ($tipo_alumno == 6) {
+		if ($tipo_alumno == 12) {
 			$data['tipo_alumno'] = $tipo_alumno;
 			$data['action'] = "add";
 			$data['tipo'] = "Regístrar Primer Grado";
 			$data['error'] = "";
-		}elseif ($tipo_alumno == 7) {
+		}elseif ($tipo_alumno == 13) {
 			$data['tipo_alumno'] = $tipo_alumno;
 			$data['action'] = "add";
 			$data['tipo'] = "Regístrar Segundo Grado";
 			$data['error'] = "";
-		}elseif ($tipo_alumno == 8) {
+		}elseif ($tipo_alumno == 14) {
 			$data['tipo_alumno'] = $tipo_alumno;
 			$data['action'] = "add";
 			$data['tipo'] = "Regístrar Tercero Grado";
 			$data['error'] = "";
-		}elseif ($tipo_alumno == 9) {
+		}elseif ($tipo_alumno == 15) {
 			$data['tipo_alumno'] = $tipo_alumno;
 			$data['action'] = "add";
 			$data['tipo'] = "Regístrar Cuarto Grado";
 			$data['error'] = "";
-		}elseif ($tipo_alumno == 10) {
+		}elseif ($tipo_alumno == 16) {
 			$data['tipo_alumno'] = $tipo_alumno;
 			$data['action'] = "add";
 			$data['tipo'] = "Regístrar Quinto Grado";
 			$data['error'] = "";
-		}elseif ($tipo_alumno == 11) {
-			$data['tipo_alumno'] = $tipo_alumno;
-			$data['action'] = "add";
-			$data['tipo'] = "Regístrar Sexto Grado";
-			$data['error'] = "";
 		}
 		
-		$this->load->view('registrar_primaria',$data);
+		$this->load->view('registrar_secundaria',$data);
 	}
 
-	public function ver_primaria($tipo_alumno='')
+	public function ver_secundaria($tipo_alumno='')
 	{
 		$data = array();
 		/*
@@ -69,7 +64,7 @@ class Secundaria extends Secure_area {
 		16 => 5 grado
 		*/
 		$data['info'] = $this->Alumnos_model->get_all($tipo_alumno);
-		$this->load->view('ver_primaria',$data);
+		$this->load->view('ver_secundaria',$data);
 	}
 
 	// Add a new item
@@ -95,7 +90,7 @@ class Secundaria extends Secure_area {
 	        			$data['action'] = "update";
 						$data['tipo'] = "ACtualizar";
 	        		}
-	                $this->load->view('registrar_primaria', $data);
+	                $this->load->view('registrar_secundaria', $data);
 	                exit;
 	        }
 		}
@@ -117,12 +112,12 @@ class Secundaria extends Secure_area {
 	    		$data_save['filename'] = $new_name;
 	    	}
 	    	if ($this->Alumnos_model->save($data_save)) {
-	    		header("Location: ".base_url()."primaria/ver_primaria/".$tipo_alumno); 
+	    		header("Location: ".base_url()."secundaria/ver_secundaria/".$tipo_alumno); 
 	    	}else{
 	    		$data = array('error' => 'Error al guardar');
 	    		$data['action'] = "add";
 				$data['tipo'] = "Regístrate";
-	    		$this->load->view('registrar_primaria/'.$tipo_alumno, $data);
+	    		$this->load->view('registrar_secundaria/'.$tipo_alumno, $data);
 	    		exit;
 	    	}
     	}else if($this->input->post('action')=='update'){
@@ -138,13 +133,13 @@ class Secundaria extends Secure_area {
 	    		$data_up['filename'] = $new_name;
 	    	}
 	    	if ($this->Alumnos_model->update($alumno_id,$data_up)) {
-	    		header("Location: ".base_url()."primaria/ver_primaria/".$tipo_alumno); 
+	    		header("Location: ".base_url()."secundaria/ver_secundaria/".$tipo_alumno); 
 	    	}else{
 	    		$data = array('error' => 'Error al guardar');
 	    		$data['action'] = "update";
 				$data['tipo'] = "ACtualizar";
 				$data['error'] = "";
-	    		$this->load->view('registrar_primaria', $data);
+	    		$this->load->view('registrar_secundaria/'.$tipo_alumno, $data);
 	    		exit;
 	    	}
     	}
@@ -159,14 +154,14 @@ class Secundaria extends Secure_area {
 		$data['action'] = "update";
 		$data['tipo'] = "Actualizar";
 		$data['error'] = "";
-		$this->load->view('registrar_primaria',$data);
+		$this->load->view('registrar_secundaria',$data);
 	}
 
 	//Delete one item
-	public function delete( $alumno_id = NULL )
+	public function delete( $alumno_id = NULL, $tipo_alumno)
 	{
 		$this->Alumnos_model->delete($alumno_id);
-		header("Location: ".base_url()."primaria/ver_primaria"); 
+		header("Location: ".base_url()."secundaria/ver_secundaria/".$tipo_alumno); 
 	}
 
 }

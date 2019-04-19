@@ -143,9 +143,9 @@ class Primaria extends Secure_area {
 	    	}else{
 	    		$data = array('error' => 'Error al guardar');
 	    		$data['action'] = "update";
-				$data['tipo'] = "ACtualizar";
+				$data['tipo'] = "Actualizar";
 				$data['error'] = "";
-	    		$this->load->view('registrar_primaria', $data);
+	    		$this->load->view('registrar_primaria/'.$tipo_alumno, $data);
 	    		exit;
 	    	}
     	}
@@ -164,10 +164,10 @@ class Primaria extends Secure_area {
 	}
 
 	//Delete one item
-	public function delete( $alumno_id = NULL )
+	public function delete( $alumno_id = NULL, $tipo_alumno)
 	{
 		$this->Alumnos_model->delete($alumno_id);
-		header("Location: ".base_url()."primaria/ver_primaria"); 
+		header("Location: ".base_url()."primaria/ver_primaria/".$tipo_alumno); 
 	}
 
 }
