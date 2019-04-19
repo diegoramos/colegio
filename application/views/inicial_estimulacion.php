@@ -28,7 +28,7 @@
               <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                     <div class="myform-top">
                         <div class="myform-top-left">
-                          <h3>Regístrate</h3>
+                          <h3><?=$tipo ?></h3>
                             <p>Por favor ingresa tus datos personales:</p>
                         </div>
                         <div class="myform-top-right">
@@ -36,39 +36,35 @@
                         </div>
                     </div>
                     <div class="myform-bottom">
-                      <form role="form" action="registrar_inicial_estimulacion.php" method="post" enctype="multipart/form-data">
+                      <form role="form" action="<?php echo base_url();?>inicial/add" method="post" enctype="multipart/form-data">
                       <div class="form-group">
-                            <input type="text" REQUIRED name="CODIGO" placeholder="CREAR CODIGO DE ALUMNO..." class="form-control" id="form-CODIGO">
+                            <input type="text" REQUIRED name="codigo" placeholder="CREAR CODIGO DE ALUMNO..." class="form-control" id="codigo">
                         </div>
                         <div class="form-group">
+                            <input type="text" REQUIRED name="nombre" placeholder="Nombres..." class="form-control" id="nombre">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" REQUIRED name="apellido" placeholder="Apellidos..." class="form-control" id="apellido">
+                        </div>
                         
-                            <input type="text" REQUIRED name="NOMBRE" placeholder="Nombres..." class="form-control" id="form-firtsname">
+                        <div class="form-group">
+                            <input type="text" REQUIRED name="telefono" placeholder="Celular o teléfono..." class="form-control" id="telefono">
                         </div>
                         <div class="form-group">
-                            <input type="text" REQUIRED name="APELLIDO" placeholder="Apellidos..." class="form-control" id="form-lastname">
-                        </div>
-                        
-                        <div class="form-group">
-                        
-                            <input type="text" REQUIRED name="NUMERO" placeholder="Celular o teléfono..." class="form-control" id="form-NUMERO">
-                        </div>
-                        <div class="form-group">
-                            <input type="file" name="archivo">
-                            
+                            <input type="file" name="archivo" id="archivo">
                         </div>
                         
                         <button type="submit" class="mybtn" href="#">Registrarme</button>
-                        <input name="action" type="hidden" value="upload" /> 
-                        
+                        <input name="action" type="hidden" value="<?=$action?>" /> 
                      </form>
-
                     </div>
               </div>
             </div>
-            
         </div>
     </div>
-      
 
+    <script type="text/javascript">
+      
+    </script>
   </body>
 </html>
