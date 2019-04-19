@@ -68,7 +68,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="SECUNDARIA/ver_1a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>secundaria/ver_secundaria/12" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">10</p>
-					<small><a href="registrar.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/13" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -110,7 +110,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="SECUNDARIA/ver_2a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info"> <a href="<?php echo base_url() ?>secundaria/ver_secundaria/13" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>
@@ -124,7 +124,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">70</p>
-					<small><a href="registro_secretaria.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/14" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -152,7 +152,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="SECUNDARIA/ver_3a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>secundaria/ver_secundaria/14" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>
@@ -167,7 +167,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">7</p>
-					<small><a href="registrar.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/14" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -195,7 +195,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="SECUNDARIA/ver_4a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>secundaria/ver_secundaria/14" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>
@@ -209,7 +209,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">7</p>
-					<small><a href="registrar.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/16" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -237,49 +237,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="SECUNDARIA/ver_5a.php" target="New_Blank" >ver</a></button>
-
-				<!-- /boton -->
-				</div>
-			</article>
-            <article class="full-box tile">
-				<div class="full-box tile-title text-center text-titles text-uppercase">
-					6°GRADO
-				</div>
-				<div class="full-box tile-icon text-center">
-					<i class="zmdi zmdi-face"></i>
-				</div>
-				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
-					<small><a href="registrar.html" target="New_Blank" >Registrar</a></small>
-                    <!-- boton -->
-                <style>
-				.btn {
-				  border: 3px solid black;
-				  background-color: white;
-				  color: black;
-				  padding: 7px 14px;
-				  font-size: 12px;
-				  cursor: pointer;
-				}
-
-				/* blue */
-				.info {
-				  border-color: #77D349;
-				  color: green
-				}
-
-				.info:hover {
-				  background: #2196F3;
-				  color: white;
-				}
-
-
-				.default:hover {
-				  background: #e7e7e7;
-				}
-				</style>
-				<button class="btn info" > <a href="SECUNDARIA/ver_6a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>secundaria/ver_secundaria/16" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>

@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class Pagos_model extends CI_Model {
-
-	
-
-}
-
-/* End of file Pagos_model.php */
-=======
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -34,5 +22,4 @@ class Pagos_model extends CI_Model {
 }
 
 /* End of file Pagos_model.php */
->>>>>>> b8e0095c5738e7be6a6cd49db733b2b62bcc3db7
 /* Location: ./application/models/Pagos_model.php */

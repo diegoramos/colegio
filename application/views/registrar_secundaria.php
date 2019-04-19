@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="myform-bottom">
-                      <form role="form" action="<?php echo base_url();?>primaria/add_update" method="post" enctype="multipart/form-data">
+                      <form role="form" action="<?php echo base_url();?>secundaria/add_update" method="post" enctype="multipart/form-data">
                       <div class="form-group">
                             <input type="hidden" name="alumno_id" id="alumno_id" value="<?=isset($info->alumno_id)?$info->alumno_id:''?>">
                             <input type="hidden" name="tipo_alumno" id="tipo_alumno" value="<?=isset($info->tipo_alumno)?$info->tipo_alumno:$tipo_alumno?>">
