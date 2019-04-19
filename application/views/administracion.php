@@ -43,34 +43,33 @@
 					<small><a href="<?php echo base_url();?>administration/registrar_directores" target="_blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
-.btn {
-  border: 3px solid black;
-  background-color: white;
-  color: black;
-  padding: 7px 14px;
-  font-size: 12px;
-  cursor: pointer;
-}
+				.btn {
+				  border: 3px solid black;
+				  background-color: white;
+				  color: black;
+				  padding: 7px 14px;
+				  font-size: 12px;
+				  cursor: pointer;
+				}
 
-/* blue */
-.info {
-  border-color: #77D349;
-  color: green
-}
+				/* blue */
+				.info {
+				  border-color: #77D349;
+				  color: green
+				}
 
-.info:hover {
-  background: #2196F3;
-  color: white;
-}
+				.info:hover {
+				  background: #2196F3;
+				  color: white;
+				}
 
+				.default:hover {
+				  background: #e7e7e7;
+				}
+				</style>
+				<button class="btn info" > <a href="<?php echo base_url();?>administration/listar_directores" target="_blank" >ver</a></button>
 
-.default:hover {
-  background: #e7e7e7;
-}
-</style>
-<button class="btn info" > <a href="<?php echo base_url();?>administration/listar_directores" target="_blank" >ver</a></button>
-
-<!-- /boton -->
+				<!-- /boton -->
 				</div>
 			</article>
 			<article class="full-box tile">
@@ -83,12 +82,7 @@
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">10</p>
 					<small>registrar</small>
-                    <!-- boton -->
-                
-
-
-
-<!-- /boton -->
+				<!-- /boton -->
 				</div>
 			</article>
 			<article class="full-box tile">
@@ -103,34 +97,33 @@
 					<small><a href="<?php echo base_url() ?>secretary/registrar_secretaria">Registrar</a></small>
                     <!-- boton -->
                 <style>
-.btn {
-  border: 3px solid black;
-  background-color: white;
-  color: black;
-  padding: 7px 14px;
-  font-size: 12px;
-  cursor: pointer;
-}
+				.btn {
+				  border: 3px solid black;
+				  background-color: white;
+				  color: black;
+				  padding: 7px 14px;
+				  font-size: 12px;
+				  cursor: pointer;
+				}
 
-/* blue */
-.info {
-  border-color: #77D349;
-  color: green
-}
+				/* blue */
+				.info {
+				  border-color: #77D349;
+				  color: green
+				}
 
-.info:hover {
-  background: #2196F3;
-  color: white;
-}
+				.info:hover {
+				  background: #2196F3;
+				  color: white;
+				}
 
+				.default:hover {
+				  background: #e7e7e7;
+				}
+				</style>
+				<button class="btn info" > <a href="<?php echo base_url() ?>secretary/listar_secretaria"" target="_blank" >ver</a></button>
 
-.default:hover {
-  background: #e7e7e7;
-}
-</style>
-<button class="btn info" > <a href="<?php echo base_url() ?>secretary/listar_secretaria"" target="_blank" >ver</a></button>
-
-<!-- /boton -->
+				<!-- /boton -->
 				</div>
 			</article>
             <div class="full-box text-center" style="padding: 30px 10px;">
@@ -145,34 +138,33 @@
 					<p class="full-box">7</p>
                     <!-- boton -->
                 <style>
-.btn {
-  border: 3px solid black;
-  background-color: white;
-  color: black;
-  padding: 7px 14px;
-  font-size: 12px;
-  cursor: pointer;
-}
+				.btn {
+				  border: 3px solid black;
+				  background-color: white;
+				  color: black;
+				  padding: 7px 14px;
+				  font-size: 12px;
+				  cursor: pointer;
+				}
 
-/* blue */
-.info {
-  border-color: #77D349;
-  color: green
-}
+				/* blue */
+				.info {
+				  border-color: #77D349;
+				  color: green
+				}
 
-.info:hover {
-  background: #2196F3;
-  color: white;
-}
+				.info:hover {
+				  background: #2196F3;
+				  color: white;
+				}
 
+				.default:hover {
+				  background: #e7e7e7;
+				}
+				</style>
+				<button class="btn info"> <a href="<?php echo base_url() ?>inicial" target="_blank" >ver</a></button>
 
-.default:hover {
-  background: #e7e7e7;
-}
-</style>
-<button class="btn info" > <a href="<?php echo base_url() ?>inicial" target="_blank" >ver</a></button>
-
-<!-- /boton -->
+				<!-- /boton -->
 				</div>
 			</article>
 			<article class="full-box tile">
@@ -187,34 +179,33 @@
 					
                     <!-- boton -->
                 <style>
-.btn {
-  border: 3px solid black;
-  background-color: white;
-  color: black;
-  padding: 7px 14px;
-  font-size: 12px;
-  cursor: pointer;
-}
+				.btn {
+				  border: 3px solid black;
+				  background-color: white;
+				  color: black;
+				  padding: 7px 14px;
+				  font-size: 12px;
+				  cursor: pointer;
+				}
 
-/* blue */
-.info {
-  border-color: #77D349;
-  color: green
-}
+				/* blue */
+				.info {
+				  border-color: #77D349;
+				  color: green
+				}
 
-.info:hover {
-  background: #2196F3;
-  color: white;
-}
+				.info:hover {
+				  background: #2196F3;
+				  color: white;
+				}
 
+				.default:hover {
+				  background: #e7e7e7;
+				}
+				</style>
+				<button class="btn info" > <a href="<?php echo base_url() ?>primaria" target="_blank" >ver</a></button>
 
-.default:hover {
-  background: #e7e7e7;
-}
-</style>
-<button class="btn info" > <a href="primaria.php" target="_blank" >ver</a></button>
-
-<!-- /boton -->
+				<!-- /boton -->
 				</div>
 			</article>
 			<article class="full-box tile">
@@ -229,34 +220,31 @@
 					
                     <!-- boton -->
                 <style>
-.btn {
-  border: 3px solid black;
-  background-color: white;
-  color: black;
-  padding: 7px 14px;
-  font-size: 12px;
-  cursor: pointer;
-}
+				.btn {
+				  border: 3px solid black;
+				  background-color: white;
+				  color: black;
+				  padding: 7px 14px;
+				  font-size: 12px;
+				  cursor: pointer;
+				}
 
-/* blue */
-.info {
-  border-color: #77D349;
-  color: green
-}
+				/* blue */
+				.info {
+				  border-color: #77D349;
+				  color: green
+				}
 
-.info:hover {
-  background: #2196F3;
-  color: white;
-}
-
-
-.default:hover {
-  background: #e7e7e7;
-}
-</style>
-<button class="btn info" > <a href="secundaria.php" target="New_Blank" >ver</a></button>
-
-<!-- /boton -->
+				.info:hover {
+				  background: #2196F3;
+				  color: white;
+				}
+				.default:hover {
+				  background: #e7e7e7;
+				}
+				</style>
+				<button class="btn info"> <a href="<?php echo base_url() ?>secundaria" target="New_Blank" >ver</a></button>
+				<!-- /boton -->
 				</div>
 			</article>
 	</section>

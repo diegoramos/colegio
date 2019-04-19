@@ -19,17 +19,36 @@ class Inicial extends Secure_area {
 		$this->load->view('partial/footer');
 	}
 	
-	public function inicial_estimulacion($value='')
+	public function registrar_inicial($tipo_alumno='')
 	{
 
 		$data = array();
-		$data['action'] = "add";
-		$data['tipo'] = "Regístrate";
-		$data['error'] = "";
-		$this->load->view('inicial_estimulacion',$data);
+		if ($tipo_alumno == 1) {
+			$data['tipo_alumno'] = $tipo_alumno;
+			$data['action'] = "add";
+			$data['tipo'] = "Regístrar Estimulacion";
+			$data['error'] = "";
+		}elseif ($tipo_alumno == 2) {
+			$data['tipo_alumno'] = $tipo_alumno;
+			$data['action'] = "add";
+			$data['tipo'] = "Regístrar 3 Años";
+			$data['error'] = "";
+		}elseif ($tipo_alumno == 3) {
+			$data['tipo_alumno'] = $tipo_alumno;
+			$data['action'] = "add";
+			$data['tipo'] = "Regístrar 4 Aaños";
+			$data['error'] = "";
+		}elseif ($tipo_alumno == 4) {
+			$data['tipo_alumno'] = $tipo_alumno;
+			$data['action'] = "add";
+			$data['tipo'] = "Regístrar 5 Años";
+			$data['error'] = "";
+		}
+
+		$this->load->view('registrar_inicial',$data);
 	}
 
-	public function ver_estimulacion($value='')
+	public function ver_inicial($tipo_alumno='')
 	{
 		$data = array();
 		/*
@@ -37,10 +56,10 @@ class Inicial extends Secure_area {
 		1 => estimulacion
 		2 => 3 años
 		3 => 4 años
-		5 => 5 años
+		4 => 5 años
 		*/
-		$data['info'] = $this->Alumnos_model->get_all(1);
-		$this->load->view('ver_estimulacion',$data);
+		$data['info'] = $this->Alumnos_model->get_all($tipo_alumno);
+		$this->load->view('ver_inicial',$data);
 	}
 
 	// Add a new item
@@ -66,7 +85,7 @@ class Inicial extends Secure_area {
 	        			$data['action'] = "update";
 						$data['tipo'] = "ACtualizar";
 	        		}
-	                $this->load->view('inicial_estimulacion', $data);
+	                $this->load->view('registrar_inicial', $data);
 	                exit;
 	        }
 		}
@@ -75,24 +94,25 @@ class Inicial extends Secure_area {
     	$nombre = $this->input->post('nombre');
     	$apellido = $this->input->post('apellido');
     	$telefono = $this->input->post('telefono');
+    	$tipo_alumno = $this->input->post('tipo_alumno');
     	if ($this->input->post('action')=='add') {
     		$data_save = array(
 	    		'codigo' => $codigo,
 	    		'nombre' => $nombre,
 	    		'apellido' => $apellido,
 	    		'telefono' => $telefono,
-	    		'tipo_alumno' => 1
+	    		'tipo_alumno' => $tipo_alumno
 	    		 );
 	    	if ($new_name!='') {
 	    		$data_save['filename'] = $new_name;
 	    	}
 	    	if ($this->Alumnos_model->save($data_save)) {
-	    		header("Location: ".base_url()."inicial/ver_estimulacion"); 
+	    		header("Location: ".base_url()."inicial/ver_inicial/".$tipo_alumno); 
 	    	}else{
 	    		$data = array('error' => 'Error al guardar');
 	    		$data['action'] = "add";
 				$data['tipo'] = "Regístrate";
-	    		$this->load->view('inicial_estimulacion', $data);
+	    		$this->load->view('registrar_inicial/'.$tipo_alumno, $data);
 	    		exit;
 	    	}
     	}else if($this->input->post('action')=='update'){
@@ -102,19 +122,19 @@ class Inicial extends Secure_area {
 	    		'nombre' => $nombre,
 	    		'apellido' => $apellido,
 	    		'telefono' => $telefono,
-	    		'tipo_alumno' => 1
+	    		'tipo_alumno' => $tipo_alumno
 	    		 );
 	    	if ($new_name!='') {
 	    		$data_up['filename'] = $new_name;
 	    	}
 	    	if ($this->Alumnos_model->update($alumno_id,$data_up)) {
-	    		header("Location: ".base_url()."inicial/ver_estimulacion"); 
+	    		header("Location: ".base_url()."inicial/ver_inicial/".$tipo_alumno); 
 	    	}else{
 	    		$data = array('error' => 'Error al guardar');
 	    		$data['action'] = "update";
 				$data['tipo'] = "ACtualizar";
 				$data['error'] = "";
-	    		$this->load->view('inicial_estimulacion', $data);
+	    		$this->load->view('registrar_inicial/'.$tipo_alumno, $data);
 	    		exit;
 	    	}
     	}
@@ -129,14 +149,14 @@ class Inicial extends Secure_area {
 		$data['action'] = "update";
 		$data['tipo'] = "ACtualizar";
 		$data['error'] = "";
-		$this->load->view('inicial_estimulacion',$data);
+		$this->load->view('registrar_inicial',$data);
 	}
 
 	//Delete one item
-	public function delete( $alumno_id = NULL )
+	public function delete( $alumno_id = NULL, $tipo_alumno)
 	{
 		$this->Alumnos_model->delete($alumno_id);
-		header("Location: ".base_url()."inicial/ver_estimulacion"); 
+		header("Location: ".base_url()."inicial/ver_inicial/".$tipo_alumno); 
 	}
 }
 
