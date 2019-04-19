@@ -36,24 +36,27 @@
                         </div>
                     </div>
                     <div class="myform-bottom">
-                      <form role="form" action="<?php echo base_url();?>inicial/add" method="post" enctype="multipart/form-data">
+                      <form role="form" action="<?php echo base_url();?>inicial/add_update" method="post" enctype="multipart/form-data">
                       <div class="form-group">
-                            <input type="text" REQUIRED name="codigo" placeholder="CREAR CODIGO DE ALUMNO..." class="form-control" id="codigo">
+                        <input type="hidden" name="alumno_id" id="alumno_id" value="<?=isset($info->alumno_id)?$info->alumno_id:''?>">
+                            <input type="text" REQUIRED name="codigo" placeholder="CREAR CODIGO DE ALUMNO..." class="form-control" id="codigo" value="<?=isset($info->codigo)?$info->codigo:''?>">
                         </div>
                         <div class="form-group">
-                            <input type="text" REQUIRED name="nombre" placeholder="Nombres..." class="form-control" id="nombre">
+                            <input type="text" REQUIRED name="nombre" placeholder="Nombres..." class="form-control" id="nombre" value="<?=isset($info->nombre)?$info->nombre:''?>">
                         </div>
                         <div class="form-group">
-                            <input type="text" REQUIRED name="apellido" placeholder="Apellidos..." class="form-control" id="apellido">
+                            <input type="text" REQUIRED name="apellido" placeholder="Apellidos..." class="form-control" id="apellido" value="<?=isset($info->apellido)?$info->apellido:''?>">
                         </div>
                         
                         <div class="form-group">
-                            <input type="text" REQUIRED name="telefono" placeholder="Celular o teléfono..." class="form-control" id="telefono">
+                            <input type="text" REQUIRED name="telefono" placeholder="Celular o teléfono..." class="form-control" id="telefono" value="<?=isset($info->telefono)?$info->telefono:''?>">
+                        </div>
+                        <div class="form-group">
+                            <img height="100" width="100" src="<?php echo base_url()."uploads/".$info->filename; ?>" alt="">
                         </div>
                         <div class="form-group">
                             <input type="file" name="archivo" id="archivo">
                         </div>
-                        
                         <button type="submit" class="mybtn" href="#">Registrarme</button>
                         <input name="action" type="hidden" value="<?=$action?>" /> 
                      </form>
