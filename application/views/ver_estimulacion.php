@@ -24,13 +24,15 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-				<td>". $row["NOMBRE"]. "</td>
-				<td> ". $row["APELLIDO"]. "</td>
-				<td> ". $row["USUARIO"]. "</td>
-				<td> ". $row["CONTRASENA"]. "</td>
-				<td><button type="button" class="btn btn-primary">Editar</button><button type="button" class="btn btn-danger">Eliminar</button><button type="button" class="btn btn-info">Pagar</button></td>
-				</tr>
+				<?php foreach ($info as $key => $val) {  ?>
+					<tr>
+						<td><?=$val->codigo?></td>
+						<td><?=$val->nombre?></td>
+						<td><?=$val->apellido?></td>
+						<td><?=$val->telefono?></td>
+						<td><a class="btn btn-success" href="<?php echo base_url();?>inicial/edit/<?=$val->alumno_id?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url();?>inicial/delete/<?=$val->alumno_id?>" title="">Delete</a><a class="btn btn-primary" href="<?php echo base_url();?>inicial/pagar/<?=$val->alumno_id?>" title="">Pagar</a></td>
+					</tr>
+				<?php } ?>
 			</tbody>
 		</table>
 </div>

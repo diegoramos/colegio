@@ -60,6 +60,7 @@ class Administration extends Secure_area {
 			$data['tipo'] = "Regístrar";
 			$data['status'] = "Se registro con exito";
 			$this->load->view('registrar_directores',$data);
+			exit;
 
 		}else if($this->input->post('action')=='update'){
 			$nombre = $this->input->post('nombre');
@@ -82,8 +83,10 @@ class Administration extends Secure_area {
 		}else{
 			$data['status'] = "Opcion incorrecta";
 			$this->load->view('registrar_directores',$data);
+			exit;
 		}
-		redirect('/administration/listar_directores/');
+		
+		header("Location: ".base_url()."administration/listar_directores");
 	}
 	public function delete_usuario($id_persona){
 		$this->Administration_model->delete_usuario($id_persona);
