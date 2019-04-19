@@ -30,7 +30,7 @@
 						<td><?=$val->nombre?></td>
 						<td><?=$val->apellido?></td>
 						<td><?=$val->telefono?></td>
-						<td><a class="btn btn-success" href="<?php echo base_url();?>inicial/edit/<?=$val->alumno_id?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url();?>inicial/delete/<?=$val->alumno_id?>" title="">Delete</a><a class="btn btn-primary" href="<?php echo base_url();?>inicial/pagar/<?=$val->alumno_id?>" title="">Pagar</a></td>
+						<td><a class="btn btn-success" href="<?php echo base_url();?>inicial/edit/<?=$val->alumno_id?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url();?>inicial/delete/<?=$val->alumno_id?>" title="">Delete</a><a class="btn btn-primary" href="<?php echo base_url();?>pagos/pagar/<?=$val->alumno_id?>" title="">Pagar</a></td>
 					</tr>
 				<?php } ?>
 			</tbody>

@@ -14,6 +14,13 @@ class Pagos extends Secure_area {
 		$this->load->view('pagos');
 		//$this->load->view('partial/footer');
 	}
+	public function pagar($id)
+	{
+		$data = array();
+		$data['action'] = "add";
+		$data['pagos'] = new stdClass();
+		$this->load->view('pagos',$data);
+	}
 	public function registrar_pago(){
 		$data = array();
 		$data['action'] = "add";

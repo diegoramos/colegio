@@ -23,20 +23,20 @@
 </head>
 <body>
 	<div class="container"> 
-            <div class="row">
-                <div class="col-sm-12" >
-                  <h1><strong>Registro de Pagos</strong> </h1>
-                  <div class="mydescription">
-                  </div>
-                </div>
+        <div class="row">
+            <div class="col-sm-12" align="center">
+              <h1 style="color: white"><strong>Registro de Pagos</strong> </h1>
+              <div class="mydescription">
+              </div>
             </div>
+        </div>
             <div class="row">
 	<div class="col-sm-6 col-sm-offset-3 myform-cont" >
 	    <div class="myform-bottom">
 	      <form role="form" action="<?php echo base_url();?>pagos/save_pago" method="post" class="">
 	        <div class="form-group">
 	            <input type="hidden" name="id_persona" id="id_persona" value="<?=isset($info->id_persona)?$info->id_persona:''?>">
-	            <input type="date" REQUIRED name="fecha" placeholder="FECHA..." class="form-control" id="fecha" value="<?=isset($info->fecha)?$info->fecha:''?>">
+	            <input type="text" REQUIRED name="fecha" placeholder="FECHA..." readonly="" class="form-control" id="fecha" value="<?=isset($info->fecha)?$info->fecha:date('Y-m-d H:i:s')?>">
 	        </div>
 	        <div class="form-group">
 	            <input type="number" max="99999999" REQUIRED name="monto" placeholder="MONTO..." class="form-control" id="monto" value="<?=isset($info->monto)?$info->monto:''?>">
