@@ -26,16 +26,18 @@
         <div class="row">
             <div class="col-sm-12" align="center">
               <h1 style="color: white"><strong>Registro de Pagos</strong> </h1>
-              <div class="mydescription">
+              <div class="mydescription" style="color: white">
+              	<h4><?php echo $info->nombre." ".$info->apellido; ?></h4>
               </div>
             </div>
         </div>
             <div class="row">
 	<div class="col-sm-6 col-sm-offset-3 myform-cont" >
 	    <div class="myform-bottom">
-	      <form role="form" action="<?php echo base_url();?>pagos/save_pago" method="post" class="">
+	      <form role="form" id="form" action="<?php echo base_url();?>pagos/save_pago" method="post" class="">
 	        <div class="form-group">
-	            <input type="hidden" name="id_persona" id="id_persona" value="<?=isset($info->id_persona)?$info->id_persona:''?>">
+	        	<input type="hidden" name="pago_id" id="pago_id" value="">
+	            <input type="hidden" name="alumno_id" id="alumno_id" value="<?=isset($info->alumno_id)?$info->alumno_id:''?>">
 	            <input type="text" REQUIRED name="fecha" placeholder="FECHA..." readonly="" class="form-control" id="fecha" value="<?=isset($info->fecha)?$info->fecha:date('Y-m-d H:i:s')?>">
 	        </div>
 	        <div class="form-group">
@@ -44,8 +46,8 @@
 	         <div class="form-group">
 	            <textarea REQUIRED name="concepto" placeholder="CONCEPTO..." class="form-control" id="concepto" value="<?=isset($info->concepto)?$info->concepto:''?>"></textarea>
 	        </div>
-	        <button type="button" class="btn btn-primary">Guardar</button>
-	        <input name="action" type="hidden" value="" /> 
+	        <button type="submit" id="btnsave" class="btn btn-primary">Guardar</button>
+	        <input name="action" type="hidden" value="<?php echo isset($_GET['action']) ? $_GET['action']:$action;; ?>" /> 
 	     </form>
 	    </div>
 	</div>
@@ -69,17 +71,50 @@
 			    	<td><?=$val->fecha?></td>
 			    	<td><?=$val->monto?></td>
 			    	<td><?=$val->concepto?></td>
-			    	<td></td>
-			    	<td><a class="btn btn-primary" href="<?php echo base_url(); ?>secretary/editar_secretaria/<?=$val->id_persona?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url(); ?>secretary/delete_secretaria/<?=$val->id_persona?>" title="">Delete</a></td>
+			    	<td><button type="button" class="btn btn-primary" onclick="editar('<?=$val->pago_id?>');">Edit</button><button type="button" class="btn btn-danger" onclick="eliminar('<?=$val->pago_id?>');" >Delete</button></td>
 			    </tr>
 			<?php } ?>
 			</tbody>
 		</table>
 </div>
 <script>
-		var base_url = "<?php echo base_url(); ?>";
-</script>
-<script>
+	var base_url = "<?php echo base_url(); ?>";
+
+	function editar(id){
+		$.ajax({
+			url: base_url+'pagos/edit/'+id,
+			type: 'POST',
+			dataType: 'json',
+			data: {},
+		})
+		.done(function(data) {
+			if (data!=null) {
+				$('input[name="pago_id"]').val(data.pago_id);
+				$('input[name="alumno_id"]').val(data.alumno_id);
+				$('input[name="fecha"]').val(data.fecha);
+				$('input[name="monto"]').val(data.monto);
+				$('textarea[name="concepto"]').val(data.concepto);
+				$('input[name="action"]').val('update');
+				$("#btnsave").text('Actualizar');
+			}else{
+				alert("Error al traer datos");
+			}
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	}
+	function eliminar(id){
+
+	}
+
+	/*
+	Filtrado de datos
+	**/
 	function myFunction() {
 	  var input, filter, table, tr, td, i, txtValue;
 	  input = document.getElementById("myInputsecre");
