@@ -45,7 +45,6 @@
                             <input type="text" REQUIRED name="apellidos" placeholder="Apellidos..." class="form-control" id="apellidos" value="<?=isset($info->appaterno)?$info->appaterno:''?>">
                         </div>
                          <div class="form-group col-md-offset-2 col-md-8">
-                        
                             <input type="email" REQUIRED name="usuario" placeholder="NOMBRE DE USUARIO..." class="form-control" id="usuario" value="<?=isset($info->usuario)?$info->usuario:''?>">
                         </div>
                         <div class="form-group col-md-offset-2 col-md-8">

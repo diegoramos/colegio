@@ -23,7 +23,7 @@ class Administration_model extends CI_Model
 	}
 
 	function get_all_usuarios($tipo){
-		return $this->db->select('p.nombres,p.appaterno,u.id_usuario,p.id_persona,u.usuario,u.password')
+		return $this->db->select('p.nombres,p.appaterno,p.dni,u.id_usuario,p.id_persona,u.usuario,u.password')
 						->from('usuario u')
 						->join('personas p','u.id_persona=p.id_persona')
 						->where('u.tipo_ususario',$tipo)
@@ -34,7 +34,7 @@ class Administration_model extends CI_Model
 
 	public function get_usuario_id($id=-1)
 	{
-		return $this->db->select('p.nombres,p.appaterno,u.id_usuario,p.id_persona,u.usuario,u.password')
+		return $this->db->select('p.nombres,p.appaterno,p.dni,u.id_usuario,p.id_persona,u.usuario,u.password')
 						->from('usuario u')
 						->join('personas p','u.id_persona=p.id_persona')
 						->where('u.id_persona',$id)

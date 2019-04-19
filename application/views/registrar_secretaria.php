@@ -28,7 +28,7 @@
               <div class="col-sm-6 col-sm-offset-3 myform-cont" >
                     <div class="myform-top">
                         <div class="myform-top-left">
-                          <h3>Regístrate</h3>
+                          <h3><?=$tipo?></h3>
                             <p>Por favor ingresa tus datos personales:</p>
                         </div>
                         <div class="myform-top-right">
@@ -36,31 +36,25 @@
                         </div>
                     </div>
                     <div class="myform-bottom">
-                      <form role="form" action="registro_secretaria.php" method="post" class="">
+                      <form role="form" action="<?php echo base_url();?>secretary/save_secretaria" method="post" class="">
                         <div class="form-group">
-                        
-                            <input type="text" REQUIRED name="NOMBRE" placeholder="Nombres..." class="form-control" id="form-firtsname">
+                            <input type="hidden" name="id_persona" id="id_persona" value="<?=isset($info->id_persona)?$info->id_persona:''?>">
+                            <input type="text" REQUIRED name="nombre" placeholder="Nombres..." class="form-control" id="nombre" value="<?=isset($info->nombres)?$info->nombres:''?>">
                         </div>
                         <div class="form-group">
-                            <input type="text" REQUIRED name="APELLIDO" placeholder="Apellidos..." class="form-control" id="form-lastname">
+                            <input type="text" REQUIRED name="apellidos" placeholder="Apellidos..." class="form-control" id="apellidos" value="<?=isset($info->appaterno)?$info->appaterno:''?>">
                         </div>
-                        
                         <div class="form-group">
-                        
-                            <input type="number" max="99999999" REQUIRED name="DNI" placeholder="DNI..." class="form-control" id="form-DNI">
+                            <input type="number" max="99999999" REQUIRED name="dni" placeholder="DNI..." class="form-control" id="dni" value="<?=isset($info->dni)?$info->dni:''?>">
                         </div>
                          <div class="form-group col-md-offset-2 col-md-8">
-                        
-                            <input type="text" REQUIRED name="usuario" placeholder="NOMBRE DE SECRETARIA..." class="form-control" id="form-usuario">
+                            <input type="email" REQUIRED name="usuario" placeholder="NOMBRE DE SECRETARIA..." class="form-control" id="usuario" value="<?=isset($info->usuario)?$info->usuario:''?>">
                         </div>
                         <div class="form-group col-md-offset-2 col-md-8">
-                            <input type="text" REQUIRED name="contrasena" placeholder="CONTRASEÑA DE SECREATRIA..." class="form-control" id="form-contrasena">
+                            <input type="password" <?php if(!isset($info->id_persona)){ ?> REQUIRED <?php } ?> name="password" placeholder="CONTRASEÑA DE DIRECTOR..." class="form-control" id="password">
                         </div>
-                        
-                        
-                        
-                        
                         <button type="submit" class="mybtn" href="#">Registrarme</button>
+                        <input name="action" type="hidden" value="<?php echo isset($_GET['action']) ? $_GET['action']:$action; ?>" /> 
                      </form>
                     </div>
               </div>
