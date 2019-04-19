@@ -16,7 +16,7 @@
   <body>  
      
     <div class="my-content" >
-        <div class="container" > 
+        <div class="container"> 
             <div class="row">
                 <div class="col-sm-12" >
                   <h1><strong>Formulario de Registro</strong> </h1>
