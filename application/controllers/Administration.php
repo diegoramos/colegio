@@ -83,6 +83,7 @@ class Administration extends Secure_area {
 			$data['status'] = "Opcion incorrecta";
 			$this->load->view('registrar_directores',$data);
 		}
+		redirect('/administration/listar_directores/');
 	}
 	public function delete_usuario($id_persona){
 		$this->Administration_model->delete_usuario($id_persona);
