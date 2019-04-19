@@ -49,7 +49,7 @@ class Pagos extends Secure_area {
 			$fecha = $this->input->post('fecha');
 			$monto = $this->input->post('monto');
 			$concepto = $this->input->post('concepto');
-
+			$id = $this->input->post('pago_id');
 			$data_pago = array(
 				'alumno_id' => $alumno_id,
 				'fecha' => $fecha,
@@ -63,9 +63,12 @@ class Pagos extends Secure_area {
 			$this->load->view('registrar_directores',$data);
 		}
 	}
-	public function delete_pago($id_persona){
-		$this->Administration_model->delete_usuario($id_persona);
-		header("Location: ".base_url()."administration/listar_directores"); 
+	public function delete_pago($id){
+		if ($this->Pagos_model->delete_usuario($id)) {
+			echo json_encode(TRUE);
+		}else{
+			echo json_encode(FALSE);
+		}
 	}
 
 	public function edit($id){

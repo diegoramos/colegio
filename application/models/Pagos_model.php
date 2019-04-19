@@ -10,10 +10,13 @@ class Pagos_model extends CI_Model {
 		return $this->db->where('pago_id',$id)->update('pagos', $data);
 	}
 	function get_all($id){
-		return $this->db->where('alumno_id', $id)->get('pagos')->result();
+		return $this->db->where('alumno_id', $id)->where('deleted', 0)->get('pagos')->result();
 	}
 	function get_pago_id($id){
 		return $this->db->where('pago_id', $id)->get('pagos')->row();
+	}
+	function delete_usuario($id){
+		return $this->db->where('pago_id',$id)->update('pagos',array('deleted'=>1));
 	}
 
 }

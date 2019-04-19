@@ -67,7 +67,7 @@
 			<tbody>
 				<?php 
 				foreach ($pagos as $key => $val) { ?>
-			    <tr>
+			    <tr class="row<?=$val->pago_id?>">
 			    	<td><?=$val->fecha?></td>
 			    	<td><?=$val->monto?></td>
 			    	<td><?=$val->concepto?></td>
@@ -109,7 +109,25 @@
 		
 	}
 	function eliminar(id){
-
+		$.ajax({
+			url: base_url+'pagos/delete_pago/'+id,
+			type: 'POST',
+			dataType: 'json',
+			data: {},
+		})
+		.done(function(data) {
+			if (data) {
+				$(".row"+id).remove();
+			}else{
+				alert("Error al traer datos");
+			}
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
 	}
 
 	/*
@@ -122,7 +140,7 @@
 	  table = document.getElementById("myTablesecre");
 	  tr = table.getElementsByTagName("tr");
 	  for (i = 0; i < tr.length; i++) {
-	    td = tr[i].getElementsByTagName("td")[0];
+	    td = tr[i].getElementsByTagName("td")[2];
 	    if (td) {
 	      txtValue = td.textContent || td.innerText;
 	      if (txtValue.toUpperCase().indexOf(filter) > -1) {
