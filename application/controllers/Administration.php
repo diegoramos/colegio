@@ -22,6 +22,12 @@ class Administration extends Secure_area {
 	}
 	public function listar_directores(){
 		$data = array();
+		/*
+			tipo_ususario
+			1 => admin,
+			2 => director,
+			3 => secretaria,
+			*/
 		$data['directores'] = $this->Administration_model->get_all_usuarios(2);
 		$this->load->view('listar_directores',$data);
 	}
@@ -37,6 +43,12 @@ class Administration extends Secure_area {
 				'nombres' => $nombre ,
 				'appaterno' => $apellidos);
 			$last_id = $this->Administration_model->save_people($data_persona);
+			/*
+			tipo_ususario
+			1 => admin,
+			2 => director,
+			3 => secretaria,
+			*/
 			$data_usuario = array(
 				'id_persona' => $last_id,
 				'usuario' => $usuario ,
@@ -60,7 +72,7 @@ class Administration extends Secure_area {
 				'appaterno' => $apellidos);
 			$last_id = $this->Administration_model->update_people($id_persona,$data_persona);
 			$data_usuario = array(
-				'usuario' => $usuario ,
+				'usuario' => $usuario,
 				'tipo_ususario' => 2);
 			if ($password!='') {
 				$data_usuario['password'] = password_hash($password, PASSWORD_DEFAULT);
