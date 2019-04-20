@@ -40,7 +40,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">7</p>
-					<small><a href="<?php echo base_url() ?>inicial/inicial_estimulacion" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>inicial/registrar_inicial/1" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 					.btn {
@@ -68,7 +68,7 @@
 					  background: #e7e7e7;
 					}
 					</style>
-				<button class="btn info"> <a href="<?php echo base_url() ?>inicial/ver_estimulacion" target="_blank" >ver</a></button>
+				<button class="btn info"> <a href="<?php echo base_url() ?>inicial/ver_inicial/1" target="_blank" >ver</a></button>
 
 			<!-- /boton -->
 				</div>
@@ -82,7 +82,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">10</p>
-					<small><a href="registrar_inicial_3a.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>inicial/registrar_inicial/2" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -110,7 +110,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="INICIAL/ver_3a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>inicial/ver_inicial/2" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>
@@ -124,7 +124,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">70</p>
-					<small><a href="registrar_inicial_4a.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>inicial/registrar_inicial/3" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -152,7 +152,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="INICIAL/ver_4a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>inicial/ver_inicial/3" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>
@@ -167,7 +167,7 @@
 				</div>
 				<div class="full-box tile-number text-titles">
 					<p class="full-box">7</p>
-					<small><a href="registrar_inicial_5a.html" target="New_Blank" >Registrar</a></small>
+					<small><a href="<?php echo base_url() ?>inicial/registrar_inicial/4" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -195,7 +195,7 @@
 				  background: #e7e7e7;
 				}
 				</style>
-				<button class="btn info" > <a href="INICIAL/ver_5a.php" target="New_Blank" >ver</a></button>
+				<button class="btn info" > <a href="<?php echo base_url() ?>inicial/ver_inicial/4" target="New_Blank" >ver</a></button>
 
 				<!-- /boton -->
 				</div>

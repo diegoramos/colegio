@@ -126,7 +126,6 @@ class Economia extends Secure_area {
 		$data['info'] = $this->Reporte_model->get_pago_id($id);
 		echo json_encode($data['info']);
 	}
-	
 }
 
 /* End of file Economia.php */

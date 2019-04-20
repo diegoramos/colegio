@@ -18,6 +18,7 @@ class Alumnos_model extends CI_Model {
 	function get_by_id($id){
 		return $this->db->where('alumno_id',$id)->where('deleted',0)->from('alumnos')->get()->row();
 	}
+
 	function get_alumnos_by_max_fecha($cant_mes){
 		return $this->db->query("SELECT * FROM alumnos WHERE deleted = 0 AND fecha BETWEEN DATE_SUB(NOW(), INTERVAL $cant_mes MONTH) AND NOW() ORDER BY alumno_id DESC");
 	}

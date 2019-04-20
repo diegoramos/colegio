@@ -1,9 +1,6 @@
+
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
-				<li>
-					<a href="<?php echo base_url();?>home">
-						<i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
-					</a>
-				</li>
+
 				<?php foreach ($allowed_modules->result() as $key => $val) {  ?>
 					<li>
 						<a href="<?php echo $val->module_id != 'economia'? base_url().$val->module_id:'#!';?>" class="btn-sideBar-SubMenu">

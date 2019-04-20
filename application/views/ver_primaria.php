@@ -49,7 +49,7 @@
 						<?php }else{?>
 						<td><img src="<?php echo base_url() ?>uploads/<?=$val->filename?>"  width="50" height="50"></td>
 						<?php } ?>
-						<td><a class="btn btn-success" href="<?php echo base_url();?>primaria/edit/<?=$val->alumno_id?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url();?>primaria/delete/<?=$val->alumno_id?>" title="">Delete</a><a class="btn btn-primary" href="<?php echo base_url();?>pagos/pagar/<?=$val->alumno_id?>" title="">Pagar</a></td>
+						<td><a class="btn btn-success" href="<?php echo base_url();?>primaria/edit/<?=$val->alumno_id?>" title="">Edit</a><a class="btn btn-danger" href="<?php echo base_url();?>primaria/delete/<?=$val->alumno_id?>/<?=$val->tipo_alumno?>" title="">Delete</a><a class="btn btn-primary" href="<?php echo base_url();?>pagos/pagar/<?=$val->alumno_id?>" title="">Pagar</a></td>
 					</tr>
 				<?php } ?>
 			</tbody>
