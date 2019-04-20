@@ -15,6 +15,11 @@ class Administration_model extends CI_Model
 		$this->db->insert('usuario', $data);
 	}
 
+	public function save_modules($data_modules)
+	{
+		$this->db->insert_batch('permissions', $data_modules);
+	}
+
 	function update_people($id,$data){
 		$this->db->where('id_persona',$id)->update('personas', $data);
 	}
