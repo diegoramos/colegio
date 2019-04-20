@@ -43,6 +43,15 @@ class Administration extends Secure_area {
 				'nombres' => $nombre ,
 				'appaterno' => $apellidos);
 			$last_id = $this->Administration_model->save_people($data_persona);
+			$data_modules = array(
+				array(
+					'module_id' => 'administration',
+					'id_persona' => $last_id ),
+				array(
+					'module_id' => 'economia',
+					'id_persona' => $last_id )
+			);
+			$this->Administration_model->save_modules($data_modules);
 			/*
 			tipo_ususario
 			1 => admin,

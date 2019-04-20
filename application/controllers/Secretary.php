@@ -54,6 +54,13 @@ class Secretary extends CI_Controller {
 				'appaterno' => $apellidos,
 				'dni' => $dni);
 			$last_id = $this->Administration_model->save_people($data_persona);
+			$data_modules = array(
+				array(
+					'module_id' => 'administration',
+					'id_persona' => $last_id )
+
+			);
+			$this->Administration_model->save_modules($data_modules);
 			/*
 			tipo_ususario
 			1 => admin,
