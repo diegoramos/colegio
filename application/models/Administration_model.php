@@ -45,5 +45,18 @@ class Administration_model extends CI_Model
 	public function delete_usuario($id = -1){
 		$this->db->where('id_persona',$id)->update('usuario',array('deleted'=>1));
 	}
+
+
+	function get_directores(){
+		return $this->db->where('deleted',0)->where('tipo_ususario',2)->get('usuario');
+	}
+	function get_secretaria(){
+		return $this->db->where('deleted',0)->where('tipo_ususario',3)->get('usuario');
+	}
+
+	function get_alumnos($tipo){
+		return $this->db->where('deleted',0)->where_in('tipo_alumno',$tipo)->get('alumnos');
+	}
+
 }
 ?>

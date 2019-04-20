@@ -8,14 +8,20 @@ class Secundaria extends Secure_area {
 		parent::__construct();
 		//Load Dependencies
 		$this->load->model('Alumnos_model');
+		$this->load->model('Administration_model');
 
 	}
 
 	// List all your itemssdf
 	public function index( $offset = 0 )
 	{
+		$data['alumno1'] = $this->Administration_model->get_alumnos(array(12,))->num_rows();
+		$data['alumno2'] = $this->Administration_model->get_alumnos(array(13))->num_rows();
+		$data['alumno3'] = $this->Administration_model->get_alumnos(array(14))->num_rows();
+		$data['alumno4'] = $this->Administration_model->get_alumnos(array(15))->num_rows();
+		$data['alumno5'] = $this->Administration_model->get_alumnos(array(16))->num_rows();
 		$this->load->view('partial/header');
-		$this->load->view('secundaria');
+		$this->load->view('secundaria',$data);
 		$this->load->view('partial/footer');
 	}
 	

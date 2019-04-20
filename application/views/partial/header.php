@@ -19,7 +19,7 @@
 			<div class="full-box dashboard-sideBar-UserInfo">
 				<figure class="full-box">
 					<img src="<?php echo base_url(); ?>assets/assets/img/avatar.jpg" alt="UserIcon">
-					<figcaption class="text-center text-titles">User Name</figcaption>
+					<figcaption class="text-center text-titles"><?php echo $this->session->userdata('nombres');?></figcaption>
 				</figure>
 				<ul class="full-box list-unstyled text-center">
 					<li>

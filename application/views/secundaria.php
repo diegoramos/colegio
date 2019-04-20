@@ -39,7 +39,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+					<p class="full-box"><?=$alumno1?></p>
 					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/12" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
@@ -81,7 +81,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">10</p>
+					<p class="full-box"><?=$alumno2?></p>
 					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/13" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
@@ -123,7 +123,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">70</p>
+					<p class="full-box"><?=$alumno3?></p>
 					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/14" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
@@ -166,7 +166,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+					<p class="full-box"><?=$alumno4?></p>
 					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/14" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
@@ -208,7 +208,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+					<p class="full-box"><?=$alumno5?></p>
 					<small><a href="<?php echo base_url() ?>secundaria/registrar_secundaria/16" target="New_Blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>

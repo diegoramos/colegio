@@ -596,7 +596,13 @@ class Usuario extends Persona
 	function login($username, $password)
 	{
 		//Username Query
-		$query = $this->db->get_where('usuario', array('usuario' => $username, 'deleted' => 0), 1);
+		$query = $this->db->where('u.usuario',$username)
+						->where('u.deleted',0)
+						->from('usuario u')
+						->join('personas p','p.id_persona=u.id_persona')
+						->limit(1)
+						->get();
+
 		if($query->num_rows() == 1)
 		{
             $row = $query->row();
@@ -605,12 +611,14 @@ class Usuario extends Persona
 			{
 				$this->db->where('id_persona', $row->id_persona);
 				$this->session->set_userdata('id_persona', $row->id_persona);
+				$this->session->set_userdata('nombres', $row->nombres." ".$row->apmaterno);
 				$password_hash = password_hash($password, PASSWORD_DEFAULT);
 
 				return $this->db->update('usuario', array('hash_version' => 2, 'password' => $password_hash));
 			}
 			elseif($row->hash_version == 2 && password_verify($password, $row->password))
 			{
+				$this->session->set_userdata('nombres', $row->nombres." ".$row->apmaterno);
 				$this->session->set_userdata('id_persona', $row->id_persona);
 
 				return TRUE;

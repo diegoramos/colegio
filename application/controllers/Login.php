@@ -23,29 +23,11 @@ class Login extends CI_Controller {
         $username = $this->input->post('usuario');
         $password = $this->input->post('password');
         $tipo_usuario = $this->input->post('tipo_usuario');
-        if ($tipo_usuario=='') {
-            # code...
-        }elseif ($tipo_usuario=='profesor') {
-            # code...
-
-        }elseif ($tipo_usuario=='administrador') {
-            //administrador
-            if(!$this->Usuario->login($username, $password))
-            {
-                echo json_encode(array('status'=>false));
-                exit;
-            }
-        }elseif ($tipo_usuario=='director') {
-            # code...
-        }elseif ($tipo_usuario=='secretaria') {
-            # code...
-        }elseif ($tipo_usuario=='estudiante') {
-            # code...
-        }else{
+        if(!$this->Usuario->login($username, $password))
+        {
             echo json_encode(array('status'=>false));
             exit;
         }
-		
 		echo json_encode(array('status'=>true));
 	}
             

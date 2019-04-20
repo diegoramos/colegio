@@ -40,7 +40,7 @@
 					<i class="zmdi zmdi-account"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+					<p class="full-box"><?=$directores?></p>
 					<small><a href="<?php echo base_url();?>administration/registrar_directores" target="_blank" >Registrar</a></small>
                     <!-- boton -->
                 <style>
@@ -81,7 +81,7 @@
 					<i class="zmdi zmdi-male-alt"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">10</p>
+					<p class="full-box">0</p>
 					<small>registrar</small>
 				<!-- /boton -->
 				</div>
@@ -94,7 +94,7 @@
 					<i class="zmdi zmdi-male-alt"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">70</p>
+					<p class="full-box"><?=$secretaria?></p>
 					<small><a href="<?php echo base_url() ?>secretary/registrar_secretaria">Registrar</a></small>
                     <!-- boton -->
                 <style>
@@ -136,7 +136,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">7</p>
+					<p class="full-box"><?=$alumno1?></p>
                     <!-- boton -->
                 <style>
 				.btn {
@@ -176,7 +176,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">10</p>
+					<p class="full-box"><?=$alumno2?></p>
 					
                     <!-- boton -->
                 <style>
@@ -217,7 +217,7 @@
 					<i class="zmdi zmdi-face"></i>
 				</div>
 				<div class="full-box tile-number text-titles">
-					<p class="full-box">70</p>
+					<p class="full-box"><?=$alumno3?></p>
 					
                     <!-- boton -->
                 <style>

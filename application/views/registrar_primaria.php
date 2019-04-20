@@ -14,7 +14,6 @@
     
   </head>
   <body>  
-     
     <div class="my-content" >
         <div class="container" > 
             <div class="row">

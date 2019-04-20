@@ -20,15 +20,6 @@
           <input class="form-control" id="password" name="password" type="password">
           <p class="help-block">Escribe tú contraseña</p>
         </div>
-        <div class="form-control label-floating">
-            <select name="tipo_usuario" id="tipo_usuario" class="form-control">
-                <option value="profesor">Profesores</option>
-                <option value="administrador">Administrador</option>
-                <option value="director">Director</option>
-                <option value="secretaria">Secreria</option>
-                <option value="estudiante">Estudiantes</option>
-            </select>
-        </div>
         <div class="form-group text-center">
             <input type="submit" value="Iniciar sesión" class="btn btn-raised btn-danger">
         </div>

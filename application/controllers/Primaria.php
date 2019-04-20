@@ -8,14 +8,22 @@ class Primaria extends Secure_area {
 		parent::__construct();
 		//Load Dependencies
 		$this->load->model('Alumnos_model');
+		$this->load->model('Administration_model');
 
 	}
 
 	// List all your items
 	public function index( $offset = 0 )
 	{
+		$data = array();
+		$data['alumno1'] = $this->Administration_model->get_alumnos(array(6))->num_rows();
+		$data['alumno2'] = $this->Administration_model->get_alumnos(array(7))->num_rows();
+		$data['alumno3'] = $this->Administration_model->get_alumnos(array(8))->num_rows();
+		$data['alumno4'] = $this->Administration_model->get_alumnos(array(9))->num_rows();
+		$data['alumno5'] = $this->Administration_model->get_alumnos(array(10))->num_rows();
+		$data['alumno6'] = $this->Administration_model->get_alumnos(array(11))->num_rows();
 		$this->load->view('partial/header');
-		$this->load->view('primaria');
+		$this->load->view('primaria',$data);
 		$this->load->view('partial/footer');
 	}
 	

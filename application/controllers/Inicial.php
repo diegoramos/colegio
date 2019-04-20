@@ -8,14 +8,20 @@ class Inicial extends Secure_area {
 		parent::__construct();
 		//Load Dependencies
 		$this->load->model('Alumnos_model');
+		$this->load->model('Administration_model');
 
 	}
 
 	// List all your items
 	public function index( $offset = 0 )
 	{
+		$data = array();
+		$data['alumno1'] = $this->Administration_model->get_alumnos(array(1))->num_rows();
+		$data['alumno2'] = $this->Administration_model->get_alumnos(array(2))->num_rows();
+		$data['alumno3'] = $this->Administration_model->get_alumnos(array(3))->num_rows();
+		$data['alumno4'] = $this->Administration_model->get_alumnos(array(4))->num_rows();
 		$this->load->view('partial/header');
-		$this->load->view('inicial');
+		$this->load->view('inicial',$data);
 		$this->load->view('partial/footer');
 	}
 	

@@ -10,8 +10,15 @@ class Administration extends Secure_area {
 	}
 	public function index()
 	{
+		$data = array();
+		$data['directores'] = $this->Administration_model->get_directores()->num_rows();
+		$data['secretaria'] = $this->Administration_model->get_secretaria()->num_rows();
+
+		$data['alumno1'] = $this->Administration_model->get_alumnos(array(1,2,3,4))->num_rows();
+		$data['alumno2'] = $this->Administration_model->get_alumnos(array(6,7,8,9,10,11))->num_rows();
+		$data['alumno3'] = $this->Administration_model->get_alumnos(array(12,13,14,15,16))->num_rows();
 		$this->load->view('partial/header');
-		$this->load->view('administracion');
+		$this->load->view('administracion',$data);
 		$this->load->view('partial/footer');
 	}
 	public function registrar_directores(){
