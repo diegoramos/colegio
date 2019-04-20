@@ -69,8 +69,6 @@ class Administration extends Secure_area {
 			$data['tipo'] = "Regístrar";
 			$data['status'] = "Se registro con exito";
 			$this->load->view('registrar_directores',$data);
-			exit;
-
 		}else if($this->input->post('action')=='update'){
 			$nombre = $this->input->post('nombre');
 			$apellidos = $this->input->post('apellidos');
