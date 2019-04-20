@@ -11,7 +11,7 @@ class Secundaria extends Secure_area {
 
 	}
 
-	// List all your items
+	// List all your itemssdf
 	public function index( $offset = 0 )
 	{
 		$this->load->view('partial/header');

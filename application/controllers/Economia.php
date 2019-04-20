@@ -8,7 +8,7 @@ class Economia extends Secure_area {
 		parent::__construct();
 		//Load Dependencies
 		$this->load->model('Alumnos_model');
-
+		$this->load->model('Reporte_model');
 	}
 
 	public function index()
@@ -47,13 +47,85 @@ class Economia extends Secure_area {
 			$this->load->view('reporte/ingresos/informe_ingresos',$data);
 		}
 	}
+	public function ver_egresos($tipo_pago=''){
+		$data = array();
+		if ($tipo_pago==1) {
+			$data['titulo'] = "Informe de gastos escolares";
+		}else if($tipo_pago==2){
+			$data['titulo'] = "Informe de gastos secretaria";
+		}else if($tipo_pago==3){
+			$data['titulo'] = "Informe de gastos profesores";
+		}
+		$data['info'] = $this->Reporte_model->get_gasto_tipo($tipo_pago)->result();
+		$this->load->view('reporte/egresos/listado', $data);
+	}
+	public function save_pago(){
+
+		if ($this->input->post('action')=='add') {
+			$tipo_pago = $this->input->post('tipo_pago');
+			$fecha = $this->input->post('fecha');
+			$monto = $this->input->post('monto');
+			$concepto = $this->input->post('concepto');
+
+			$data_pago = array(
+				'tipo_pago' => $tipo_pago,
+				'fecha' => $fecha,
+				'monto' => $monto,
+				'concepto' => $concepto
+			);
+			$this->Reporte_model->save_pago($data_pago);
+			header("Location: ".base_url()."economia/pagar");
+
+		}else if($this->input->post('action')=='update'){
+			$tipo_pago = $this->input->post('tipo_pago');
+			$fecha = $this->input->post('fecha');
+			$monto = $this->input->post('monto');
+			$concepto = $this->input->post('concepto');
+			$id = $this->input->post('pago_id');
+			$data_pago = array(
+				'tipo_pago' => $tipo_pago,
+				'fecha' => $fecha,
+				'monto' => $monto,
+				'concepto' => $concepto
+			);
+			$this->Reporte_model->update_pago($id,$data_pago);
+			header("Location: ".base_url()."economia/pagar");
+		}else{
+			$data['status'] = "Opcion incorrecta";
+			$this->load->view('registrar_directores',$data);
+		}
+	}
 	public function egresos()
 	{
+		$data = array();
+		$data['tipo1'] = $this->Reporte_model->get_gasto_tipo(1)->num_rows();
+		$data['tipo2'] = $this->Reporte_model->get_gasto_tipo(2)->num_rows();
+		$data['tipo3'] = $this->Reporte_model->get_gasto_tipo(3)->num_rows();
 		$this->load->view('partial/header');
-		$this->load->view('administracion');
+		$this->load->view('economia_egresos',$data);
 		$this->load->view('partial/footer');
 	}
-	
+
+	public function pagar(){
+		$data = array();
+		$data['action'] = "add";
+		//$data['info'] = new stdClass();//$this->Reporte_model->get_by_id($id);
+		$data['pagos'] = $this->Reporte_model->get_all();;
+		$this->load->view('reporte/egresos/pagar',$data);
+	}
+	public function delete_pago($id){
+		if ($this->Reporte_model->delete_usuario($id)) {
+			echo json_encode(TRUE);
+		}else{
+			echo json_encode(FALSE);
+		}
+	}
+
+	public function edit($id){
+		$data = array();
+		$data['info'] = $this->Reporte_model->get_pago_id($id);
+		echo json_encode($data['info']);
+	}
 }
 
 /* End of file Economia.php */

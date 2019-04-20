@@ -1,3 +1,4 @@
+
 			<ul class="list-unstyled full-box dashboard-sideBar-Menu">
 
 				<?php foreach ($allowed_modules->result() as $key => $val) {  ?>
