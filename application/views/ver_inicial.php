@@ -20,10 +20,6 @@
 </head>
 
 <body bgcolor="#222733">
-<!DOCTYPE html> 
-
-<html> 
-<body> 
 	<div id="main-container">
 		<input type="text" id="myInputestimula" onkeyup="myFunction()" placeholder="Busca un nombre.." title="Type in a name">
 		<table id="myTableestimula" border='1' B bordercolor='' >
