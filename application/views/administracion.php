@@ -212,7 +212,7 @@
   background: #e7e7e7;
 }
 </style>
-<button class="btn info" > <a href="primaria.php" target="_blank" >ver</a></button>
+<button class="btn info" > <a href="<?php echo base_url() ?>primaria" target="_blank" >ver</a></button>
 
 <!-- /boton -->
 				</div>
@@ -254,7 +254,7 @@
   background: #e7e7e7;
 }
 </style>
-<button class="btn info" > <a href="secundaria.php" target="New_Blank" >ver</a></button>
+<button class="btn info" > <a href="<?php echo base_url() ?>secundaria" target="New_Blank" >ver</a></button>
 
 <!-- /boton -->
 				</div>

@@ -13,10 +13,10 @@
 						<ul class="list-unstyled full-box">
 							
 								<li>
-									<a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> INGRESOS</a>
+									<a href="<?php echo base_url();?>economia/ingresos"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> INGRESOS</a>
 								</li>
 								<li>
-									<a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> EGRESOS</a>
+									<a href="<?php echo base_url();?>economia/egresos"><i class="zmdi zmdi-book zmdi-hc-fw"></i> EGRESOS</a>
 								</li>
 						</ul>
 						<?php } ?>
