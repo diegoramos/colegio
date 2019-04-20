@@ -11,6 +11,7 @@ class Administration extends Secure_area {
 	public function index()
 	{
 		$data = array();
+		$data['titulo'] = "ADMINISTRADOR";
 		$data['directores'] = $this->Administration_model->get_directores()->num_rows();
 		$data['secretaria'] = $this->Administration_model->get_secretaria()->num_rows();
 
